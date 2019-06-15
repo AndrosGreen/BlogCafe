@@ -43,6 +43,34 @@ img {
     margin: 0;
 }
 
+/** Grid **/
+
+@media (min-width: 768px) {
+    .grid{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .centrar-columnas{
+        justify-content: center;
+    }
+    .columnas-4 {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+    .columnas-6{
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .columnas-8 {
+        flex: 0 0 calc(66.6% - 1rem);
+    }
+    .columnas-10 {
+        flex: 0 0 calc(83.3% - 1rem);
+    }
+    .columnas-12{
+        flex: 0 0 100%;
+    }
+}
+
 /** Botones **/
 
 .btn {
@@ -55,11 +83,17 @@ img {
     font-family: 700;
     text-transform: uppercase;
     font-size: 2rem;
+    border: none;
+    flex: 0 0 100%;
+}
+.btn:hover{
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     .btn{
         /** lo define el padding**/
         display: inline-block; 
+        flex: 0 0 auto;
     }
 }
 
@@ -145,6 +179,7 @@ img {
 .cursos {
     order: -1;
 }
+
 @media (min-width: 768px) {
     .contenido-principal{
         justify-content: space-between;
@@ -174,6 +209,7 @@ img {
 .curso {
     padding-bottom: 3rem;
     border-bottom: 1px solid #e1e1e1;
+    padding-top: 3rem;
 }
 .curso:last-of-type{
     border-bottom: none;
@@ -184,6 +220,10 @@ img {
     font-size: 2rem;
 }
 .curso p span {
+    font-weight: 400;
+}
+
+.curso p.descripcion {
     font-weight: 400;
 }
 
@@ -202,4 +242,36 @@ img {
 }
 .site-footer p span {
     font-weight: 700;
+}
+
+/** Contacto **/
+
+.formulario-contacto{
+    background-color: white;
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario-contacto{
+        margin-top: -10rem;
+    }
+}
+.formulario-contacto .campo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.formulario-contacto .campo label {
+    flex: 0 0 8rem;
+}
+.formulario-contacto .campo input:not([type="submit"]),
+.formulario-contacto textarea {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+}
+.formulario-contacto textarea {
+    height: 20rem;
+}
+.formulario-contacto .enviar {
+    display: flex;
+    justify-content: flex-end;
 }
